@@ -36,21 +36,58 @@
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">山东 · IT · 信息化 · 系统集成 · 机电施工 · 电力运维</p>
-          <h1>扎根山东的信息化与系统集成服务商</h1>
-          <p class="hero-copy">
-            山东卓恩信息技术有限公司成立于 2011 年，面向政府、企业、供电、高速、医疗等客户，提供软硬件系统集成、系统建设、机房工程、Wi-Fi 覆盖、安防监控与运维服务。
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#contact">发起项目咨询</a>
-            <a class="button secondary" href="#services">查看服务能力</a>
-          </div>
+      <section class="hero-carousel" aria-label="公司与产品介绍轮播">
+        <div class="hero-track">
+          <article class="hero hero-slide" data-hero-slide="company">
+            <div class="hero-content">
+              <p class="eyebrow">山东 · IT · 信息化 · 系统集成 · 机电施工 · 电力运维</p>
+              <h1>扎根山东的信息化与系统集成服务商</h1>
+              <p class="hero-copy">
+                山东卓恩信息技术有限公司成立于 2011 年，面向政府、企业、供电、高速、医疗等客户，提供软硬件系统集成、系统建设、机房工程、Wi-Fi 覆盖、安防监控与运维服务。
+              </p>
+              <div class="hero-actions">
+                <a class="button primary" href="#contact">发起项目咨询</a>
+                <a class="button secondary" href="#services">查看服务能力</a>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <img src="assets/hero-infrastructure.svg" alt="">
+            </div>
+          </article>
+
+          <article class="hero hero-slide product-hero-slide" data-hero-slide="product">
+            <div class="hero-content">
+              <p class="eyebrow">自主产品 · 卓恩智检 · 无人机航拍 · AI 识别</p>
+              <h2 class="hero-title">用航拍与人工智能<br>完成光伏组件识别和计数</h2>
+              <p class="hero-copy">
+                面向光伏电站盘点和巡检场景，支持照片与视频识别、人工复核、透视阵列标注、主动模型训练、多电站管理与结果导出。
+              </p>
+              <div class="hero-product-stats" aria-label="卓恩智检当前公开演示数据">
+                <span><b>37</b>张脱敏照片</span>
+                <span><b>2,604</b>个组件结果</span>
+                <span><b>94.91%</b>演示模型 F1</span>
+              </div>
+              <div class="hero-actions">
+                <a class="button primary" href="https://zhangzhen86.github.io/zhuoen-pv-inspection-demo/" target="_blank" rel="noopener noreferrer">在线体验 Demo</a>
+                <a class="button secondary" href="#products">查看产品介绍</a>
+              </div>
+            </div>
+
+            <a class="hero-product-visual" href="https://zhangzhen86.github.io/zhuoen-pv-inspection-demo/#photos" target="_blank" rel="noopener noreferrer" aria-label="打开卓恩智检照片识别演示">
+              <img src="assets/zhuoen-pv-demo.jpg" alt="无人机航拍光伏组件脱敏示范照片">
+              <span class="hero-scan-line" aria-hidden="true"></span>
+              <span class="hero-recognition-box hero-box-one" aria-hidden="true"></span>
+              <span class="hero-recognition-box hero-box-two" aria-hidden="true"></span>
+              <span class="hero-recognition-box hero-box-three" aria-hidden="true"></span>
+              <span class="hero-demo-badge"><b>AI 识别结果</b><small>人工复核 · 可追溯</small></span>
+            </a>
+          </article>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <img src="assets/hero-infrastructure.svg" alt="">
+        <div class="hero-pagination" aria-label="选择首页介绍内容">
+          <button type="button" class="is-active" data-hero-index="0" aria-current="true"><span></span>公司介绍</button>
+          <button type="button" data-hero-index="1" aria-current="false"><span></span>卓恩智检</button>
         </div>
       </section>
 
