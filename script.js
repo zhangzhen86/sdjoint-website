@@ -31,6 +31,7 @@ if (heroCarousel && heroTrack && heroSlides.length === 2 && heroPagination.lengt
   let physicalIndex = 0;
   let autoTimer = null;
   let isTransitioning = false;
+  let interactionPaused = false;
 
   firstSlideClone.setAttribute("aria-hidden", "true");
   firstSlideClone.setAttribute("inert", "");
@@ -95,8 +96,11 @@ if (heroCarousel && heroTrack && heroSlides.length === 2 && heroPagination.lengt
 
   const startAutoPlay = () => {
     stopAutoPlay();
-    if (!reduceMotion.matches) {
-      autoTimer = window.setInterval(advanceSlide, 3000);
+    if (!reduceMotion.matches && !interactionPaused && !isTransitioning) {
+      autoTimer = window.setTimeout(() => {
+        autoTimer = null;
+        advanceSlide();
+      }, 3000);
     }
   };
 
@@ -109,21 +113,35 @@ if (heroCarousel && heroTrack && heroSlides.length === 2 && heroPagination.lengt
       physicalIndex = 0;
       moveTrack(0, false);
     }
+    startAutoPlay();
   });
 
   heroPagination.forEach((button) => {
     button.addEventListener("click", () => {
       const targetIndex = Number(button.dataset.heroIndex);
+      stopAutoPlay();
       showSlide(targetIndex);
-      startAutoPlay();
+      if (!isTransitioning) {
+        startAutoPlay();
+      }
     });
   });
 
-  heroCarousel.addEventListener("mouseenter", stopAutoPlay);
-  heroCarousel.addEventListener("mouseleave", startAutoPlay);
-  heroCarousel.addEventListener("focusin", stopAutoPlay);
+  heroCarousel.addEventListener("mouseenter", () => {
+    interactionPaused = true;
+    stopAutoPlay();
+  });
+  heroCarousel.addEventListener("mouseleave", () => {
+    interactionPaused = false;
+    startAutoPlay();
+  });
+  heroCarousel.addEventListener("focusin", () => {
+    interactionPaused = true;
+    stopAutoPlay();
+  });
   heroCarousel.addEventListener("focusout", (event) => {
     if (!heroCarousel.contains(event.relatedTarget)) {
+      interactionPaused = false;
       startAutoPlay();
     }
   });
