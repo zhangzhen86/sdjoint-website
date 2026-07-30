@@ -96,7 +96,7 @@ if (heroCarousel && heroTrack && heroSlides.length === 2 && heroPagination.lengt
   const startAutoPlay = () => {
     stopAutoPlay();
     if (!reduceMotion.matches) {
-      autoTimer = window.setInterval(advanceSlide, 6500);
+      autoTimer = window.setInterval(advanceSlide, 3000);
     }
   };
 
