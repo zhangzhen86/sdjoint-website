@@ -2,6 +2,11 @@
 
 这是一个可直接部署到 GitHub Pages 的公司介绍网站，内容面向山东卓恩信息技术有限公司的信息化建设、系统集成、机电施工与运维服务。
 
+网站同时包含自主产品“卓恩智检”介绍，并提供航拍光伏组件识别平台公开 Demo 入口：
+
+- 在线演示：https://zhangzhen86.github.io/zhuoen-pv-inspection-demo/
+- 公开仓库：https://github.com/zhangzhen86/zhuoen-pv-inspection-demo
+
 ## 文件结构
 
 - `index.html`：页面结构与中文占位文案

@@ -308,6 +308,202 @@ h3 {
   background: #f4f7f5;
 }
 
+.product-section {
+  background: #fff;
+}
+
+.product-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+  gap: clamp(30px, 5vw, 72px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(31, 111, 178, 0.09), transparent 33%),
+    linear-gradient(145deg, #f7faf9, #fff);
+  overflow: hidden;
+}
+
+.product-label {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: var(--blue);
+  background: #eaf4fb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.product-content h3 {
+  margin-bottom: 18px;
+  font-size: clamp(28px, 3.4vw, 46px);
+  line-height: 1.15;
+}
+
+.product-content > p {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.product-capabilities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 16px;
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-capabilities li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--charcoal);
+}
+
+.product-capabilities li::before {
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  transform: translateY(-50%);
+  content: "";
+}
+
+.product-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.product-metrics div {
+  padding: 14px 16px;
+  border: 1px solid rgba(31, 111, 178, 0.14);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.product-metrics strong,
+.product-metrics span {
+  display: block;
+}
+
+.product-metrics strong {
+  color: var(--blue);
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.product-metrics span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.product-note {
+  display: block;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.product-visual {
+  position: relative;
+  min-height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #101820;
+  box-shadow: 0 26px 60px rgba(23, 32, 38, 0.2);
+}
+
+.product-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(5, 18, 25, 0.76));
+  content: "";
+}
+
+.product-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+}
+
+.scan-line {
+  position: absolute;
+  z-index: 2;
+  top: 13%;
+  right: 6%;
+  left: 6%;
+  height: 2px;
+  background: rgba(77, 236, 193, 0.9);
+  box-shadow: 0 0 16px rgba(77, 236, 193, 0.7);
+}
+
+.recognition-box {
+  position: absolute;
+  z-index: 2;
+  border: 2px solid #4decc1;
+  background: rgba(77, 236, 193, 0.08);
+}
+
+.box-one {
+  left: 10%;
+  top: 16%;
+  width: 26%;
+  height: 31%;
+}
+
+.box-two {
+  left: 39%;
+  top: 16%;
+  width: 25%;
+  height: 31%;
+}
+
+.box-three {
+  left: 67%;
+  top: 16%;
+  width: 23%;
+  height: 31%;
+}
+
+.product-visual-badge {
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(16, 24, 32, 0.78);
+  backdrop-filter: blur(12px);
+}
+
+.product-visual-badge b,
+.product-visual-badge small {
+  display: block;
+}
+
+.product-visual-badge small {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .solution-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -537,9 +733,18 @@ address span {
   .solution-list,
   .case-grid,
   .timeline,
+  .product-feature,
   .split,
   .contact {
     grid-template-columns: 1fr;
+  }
+
+  .product-visual {
+    min-height: 360px;
+  }
+
+  .product-visual img {
+    min-height: 360px;
   }
 
   .timeline li {
@@ -576,7 +781,17 @@ address span {
     min-height: auto;
   }
 
+  .product-feature {
+    padding: 22px;
+  }
+
+  .product-capabilities,
+  .product-metrics {
+    grid-template-columns: 1fr;
+  }
+
   .hero-actions,
+  .product-actions,
   .site-footer {
     flex-direction: column;
   }
