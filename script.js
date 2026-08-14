@@ -32,6 +32,7 @@ if (heroCarousel && heroTrack && heroSlides.length === 2 && heroPagination.lengt
   let autoTimer = null;
   let isTransitioning = false;
   let interactionPaused = false;
+  let isFirstAutoAdvance = true;
 
   firstSlideClone.setAttribute("aria-hidden", "true");
   firstSlideClone.setAttribute("inert", "");
@@ -97,10 +98,12 @@ if (heroCarousel && heroTrack && heroSlides.length === 2 && heroPagination.lengt
   const startAutoPlay = () => {
     stopAutoPlay();
     if (!reduceMotion.matches && !interactionPaused && !isTransitioning) {
+      const delay = isFirstAutoAdvance ? 80 : 3000;
+      isFirstAutoAdvance = false;
       autoTimer = window.setTimeout(() => {
         autoTimer = null;
         advanceSlide();
-      }, 3000);
+      }, delay);
     }
   };
 

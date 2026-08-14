@@ -57,13 +57,13 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-width: 210px;
+  min-width: 360px;
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
-  border-radius: 6px;
+  width: 92px;
+  height: 34px;
+  border-radius: 0;
   object-fit: contain;
   background: #fff;
 }
@@ -81,7 +81,7 @@ img {
 .brand small {
   margin-top: 2px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .site-nav {
@@ -156,8 +156,8 @@ img {
 .hero-title {
   max-width: 780px;
   margin-bottom: 22px;
-  font-size: clamp(40px, 6.2vw, 70px);
-  line-height: 1.04;
+  font-size: clamp(22px, 1.7vw, 24px);
+  line-height: 1.22;
 }
 
 .eyebrow {
@@ -179,7 +179,7 @@ p {
 h1 {
   max-width: 720px;
   margin-bottom: 22px;
-  font-size: clamp(42px, 7vw, 76px);
+  font-size: clamp(22px, 1.7vw, 24px);
   line-height: 1.04;
   letter-spacing: 0;
 }
@@ -428,6 +428,201 @@ h3 {
   box-shadow: 0 1px 0 rgba(23, 32, 38, 0.02);
 }
 
+.service-illustration {
+  position: absolute;
+  top: 26px;
+  right: 24px;
+  width: 138px;
+  height: 72px;
+  color: var(--blue);
+  opacity: 0.9;
+}
+
+.service-illustration span,
+.service-illustration::before,
+.service-illustration::after {
+  position: absolute;
+  content: "";
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card h3,
+.service-card p,
+.service-card .icon {
+  position: relative;
+  z-index: 2;
+}
+
+.service-it .service-illustration {
+  background:
+    linear-gradient(var(--blue), var(--blue)) 19px 34px / 100px 3px no-repeat,
+    linear-gradient(var(--blue), var(--blue)) 49px 16px / 3px 42px no-repeat,
+    linear-gradient(var(--blue), var(--blue)) 85px 16px / 3px 42px no-repeat;
+}
+
+.service-it .service-illustration span {
+  width: 26px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  background: #f7fbfd;
+}
+
+.service-it .service-illustration span:nth-child(1) { left: 6px; top: 25px; }
+.service-it .service-illustration span:nth-child(2) { left: 42px; top: 6px; }
+.service-it .service-illustration span:nth-child(3) { left: 80px; top: 46px; }
+
+.service-dx .service-illustration {
+  border: 2px solid rgba(31, 111, 178, 0.34);
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, rgba(31, 111, 178, 0.12) 0 30%, transparent 30%) 0 0 / 100% 100%,
+    repeating-linear-gradient(0deg, transparent 0 13px, rgba(31, 111, 178, 0.18) 13px 15px);
+}
+
+.service-dx .service-illustration span:nth-child(1) {
+  left: 48px;
+  top: 13px;
+  width: 62px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.service-dx .service-illustration span:nth-child(2) {
+  left: 48px;
+  top: 31px;
+  width: 44px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(34, 122, 89, 0.8);
+}
+
+.service-dx .service-illustration span:nth-child(3) {
+  right: 16px;
+  bottom: 12px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.service-si .service-illustration span {
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: #f7fbfd;
+}
+
+.service-si .service-illustration span:nth-child(1) { left: 12px; top: 24px; }
+.service-si .service-illustration span:nth-child(2) { left: 56px; top: 8px; }
+.service-si .service-illustration span:nth-child(3) { right: 18px; top: 34px; }
+
+.service-si .service-illustration::before {
+  left: 33px;
+  top: 26px;
+  width: 74px;
+  height: 24px;
+  border-top: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+  transform: skewY(-15deg);
+}
+
+.service-me .service-illustration {
+  background:
+    linear-gradient(var(--amber), var(--amber)) 22px 50px / 92px 4px no-repeat,
+    linear-gradient(var(--amber), var(--amber)) 36px 26px / 5px 28px no-repeat,
+    linear-gradient(var(--amber), var(--amber)) 86px 18px / 5px 36px no-repeat;
+}
+
+.service-me .service-illustration::before {
+  left: 16px;
+  top: 48px;
+  width: 108px;
+  height: 14px;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  background: repeating-linear-gradient(90deg, currentColor 0 10px, transparent 10px 20px);
+}
+
+.service-me .service-illustration span:nth-child(1) {
+  left: 24px;
+  top: 18px;
+  width: 80px;
+  height: 24px;
+  border-top: 3px solid currentColor;
+  transform: skewX(-24deg);
+}
+
+.service-ps .service-illustration {
+  background:
+    linear-gradient(var(--green), var(--green)) 24px 56px / 92px 3px no-repeat,
+    linear-gradient(var(--green), var(--green)) 67px 12px / 3px 46px no-repeat;
+}
+
+.service-ps .service-illustration span:nth-child(1) {
+  left: 48px;
+  top: 8px;
+  width: 40px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.service-ps .service-illustration span:nth-child(2) {
+  left: 58px;
+  top: 31px;
+  width: 20px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+}
+
+.service-ps .service-illustration span:nth-child(3) {
+  left: 63px;
+  top: 37px;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.service-om .service-illustration span:nth-child(1) {
+  left: 18px;
+  top: 14px;
+  width: 56px;
+  height: 44px;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  background: linear-gradient(180deg, transparent 64%, rgba(31, 111, 178, 0.14) 64%);
+}
+
+.service-om .service-illustration span:nth-child(2) {
+  right: 18px;
+  top: 10px;
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+}
+
+.service-om .service-illustration span:nth-child(3) {
+  right: 29px;
+  top: 20px;
+  width: 14px;
+  height: 8px;
+  border-left: 3px solid var(--green);
+  border-bottom: 3px solid var(--green);
+  transform: rotate(-45deg);
+}
+
 .service-card p {
   margin-bottom: 0;
   color: var(--muted);
@@ -586,16 +781,8 @@ h3 {
 }
 
 .scan-line {
-  position: absolute;
-  z-index: 2;
-  top: 13%;
-  right: 6%;
-  left: 6%;
-  height: 2px;
-  background: rgba(77, 236, 193, 0.9);
-  box-shadow: 0 0 16px rgba(77, 236, 193, 0.7);
+  display: none;
 }
-
 .recognition-box {
   position: absolute;
   z-index: 2;
@@ -604,26 +791,25 @@ h3 {
 }
 
 .box-one {
-  left: 10%;
-  top: 16%;
-  width: 26%;
-  height: 31%;
+  left: 33.5%;
+  top: 52%;
+  width: 13.5%;
+  height: 25%;
 }
 
 .box-two {
-  left: 39%;
-  top: 16%;
-  width: 25%;
-  height: 31%;
+  left: 47.2%;
+  top: 52%;
+  width: 13.5%;
+  height: 25%;
 }
 
 .box-three {
-  left: 67%;
-  top: 16%;
-  width: 23%;
-  height: 31%;
+  left: 60.9%;
+  top: 52%;
+  width: 13.5%;
+  height: 25%;
 }
-
 .product-visual-badge {
   position: absolute;
   z-index: 3;
@@ -908,6 +1094,11 @@ address span {
     min-width: 0;
   }
 
+  .brand-logo {
+    width: 78px;
+    height: 24px;
+  }
+
   .brand strong {
     font-size: 15px;
   }
@@ -925,7 +1116,7 @@ address span {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 22px;
   }
 
   .trust-strip {
@@ -957,3 +1148,32 @@ address span {
     transition: none;
   }
 }
+
+
+.service-illustration {
+  width: 132px;
+  height: 76px;
+  border: 1px solid rgba(31, 111, 178, 0.12);
+  border-radius: 7px;
+  background-image:
+    linear-gradient(rgba(246, 250, 249, 0.22), rgba(246, 250, 249, 0.22)),
+    url("assets/service-scenes.jpg") !important;
+  background-size: 100% 100%, 300% 200% !important;
+  background-repeat: no-repeat !important;
+  box-shadow: 0 8px 18px rgba(23, 32, 38, 0.07);
+  filter: saturate(0.52) contrast(0.86) brightness(1.08);
+  opacity: 0.78;
+}
+
+.service-illustration span,
+.service-illustration::before,
+.service-illustration::after {
+  display: none !important;
+}
+
+.service-it .service-illustration { background-position: 0 0, 0% 0% !important; }
+.service-dx .service-illustration { background-position: 0 0, 50% 0% !important; }
+.service-si .service-illustration { background-position: 0 0, 100% 0% !important; }
+.service-me .service-illustration { background-position: 0 0, 0% 100% !important; }
+.service-ps .service-illustration { background-position: 0 0, 50% 100% !important; }
+.service-om .service-illustration { background-position: 0 0, 100% 100% !important; }
